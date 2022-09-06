@@ -32,7 +32,4 @@ class User extends Authenticatable
         return $this->belongsToMany(Card::class);
     }
 
-    public function score(){
-        return $this->hasOne(Score::class);
-    }
 }
