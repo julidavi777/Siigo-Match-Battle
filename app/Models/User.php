@@ -18,27 +18,21 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
-        'email',
-        'password',
+        'nick_name',
+        'score',
+        'type',
+        'game_id'
     ];
 
-    /**
-     * The attributes that should be hidden for serialization.
-     *
-     * @var array<int, string>
-     */
-    protected $hidden = [
-        'password',
-        'remember_token',
-    ];
+    public function games(){
+        return $this->belongsTo(Game::class);
+    }
 
-    /**
-     * The attributes that should be cast.
-     *
-     * @var array<string, string>
-     */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
+    public function cards(){
+        return $this->belongsToMany(Card::class);
+    }
+
+    public function score(){
+        return $this->hasOne(Score::class);
+    }
 }
