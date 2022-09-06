@@ -22,6 +22,8 @@ return new class extends Migration
             $table->integer('energy');
             $table->integer('intelligence');
             $table->integer('strategy');
+            $table->string('image');
+            $table->timestamps();
         });
     }
 
