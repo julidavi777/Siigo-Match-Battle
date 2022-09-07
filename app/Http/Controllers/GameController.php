@@ -16,8 +16,11 @@ class GameController extends Controller
      */
     public function index()
     {
-        $games = Game::all();
-        return view('games.index', compact('games'));
+        $games = Game::orderBy('id')->get();
+        $game = $games[count($games) -1];
+        return response()->json($game);
+        // return Contact::orderBy('id', 'desc')->get()
+        // return view('games.index', compact('games', 'game'));
     }
 
     // echo hexadecimalAzar(5);

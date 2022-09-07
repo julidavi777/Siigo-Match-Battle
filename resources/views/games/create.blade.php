@@ -32,7 +32,7 @@
 
                 </div>
                 <div class="mb-2 d-flex justify-content-center">
-                    <a href="/games/" type="button" class="btn btn-success">Ir a iniciar partida</a>
+                    <a href="/games/" type="button" class="btn btn-warning">Ir a iniciar partida</a>
                 </div>
             </div>
 
