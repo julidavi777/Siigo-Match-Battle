@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Card;
 use App\Models\Game;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class GameController extends Controller
@@ -15,7 +17,9 @@ class GameController extends Controller
     public function index()
     {
         $game = Game::all();
-        return view('games.index', compact('game'));
+        $cards = Card::all();
+        $users = User::all();
+        return view('games.index', compact('game', 'cards', 'users'));
     }
 
     /**
