@@ -16,10 +16,8 @@ class GameController extends Controller
      */
     public function index()
     {
-        $game = Game::all();
-        $cards = Card::all();
-        $users = User::all();
-        return view('games.index', compact('game', 'cards', 'users'));
+        $games = Game::all();
+        return view('games.index', compact('games'));
     }
 
     // echo hexadecimalAzar(5);
@@ -31,15 +29,7 @@ class GameController extends Controller
      */
     public function create()
     {
-        $game = Game::all();
-        $characters = "0123456789abcdef";
-        $azar =  '';
-        for($i=0; $i<$characters; $i++){
-
-            $azar .= $characters[rand(0,strlen($characters)-1)];
-
-        }
-        return view('games.create', compact('game', 'azar'));
+        return view('games.create');
     }
 
     /**
@@ -51,14 +41,9 @@ class GameController extends Controller
     public function store(Request $request)
     {
         $games = new Game();
-        $games->document_type = $request->input('document_type');
-        // $apprentice->document_number = $request->input('document_number');
-        // if($request->hasFile('identify_document')){
-        //     $apprentice->identify_document = $request->file('identify_document')->store('public/students/identify_document/');
-        // }
-
+        $games->code = $request->input('code');
         $games->save();
-        return view('games');
+        return view('games.create');
     }
 
     /**
@@ -70,6 +55,12 @@ class GameController extends Controller
     public function show($id)
     {
         $games = Game::find($id);
+        // $query = User::join(
+        //     'users', 'users'
+        // )
+        // ->where('')
+        // ->select('')
+        // ->get();
         return view('games.show', compact('games'));
     }
 
