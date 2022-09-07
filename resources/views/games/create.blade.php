@@ -3,19 +3,15 @@
 @section('title', 'Crear Partida')
 
 @section('content')
-    <div class="container">
-        
-        <div class="form d-flex justify-content-center gap-3">
-            <form action="/games" method="POST" class="mx-3 px-3 my-5 pt-2 pb-5" enctype="multipart/form-data">
-                @csrf
-                <div class="text-center mt-5 rounded">
-                    <label class="" for="join" class="form-label"><h3 class="text-white">Ingrese el codigo de la partida</h3></label>
-                    <input type="text" name="join" id="join" class="form-control" placeholder="Código de la partida" aria-describedby="helpId">
-                </div>
-                <div class="game d-flex justify-content-center mt-5 gap-3">
-                    <a class="btn btn-success" href="/games" role="button">Ingresara la Partida</a>
-                </div>
-            </form>
+    <div class="container col col-6 bg-light text-dark rounded mt-2 pt-3">
+        <div class="mb-3 d-flex justify-content-center">
+            <label for="code" class="form-label"><b>Código partida:</b></label>
+        </div>
+        <div class="mb-3 d-flex justify-content-center">
+            <input type="button" class="btn btn-success" id="code" name="code" value="Generar">
+        </div>
+        <div class="mt-5 mb-3 d-flex justify-content-center">
+            <input type="text" value="{{ $azar }}">
         </div>
 
     </div>

@@ -19,6 +19,11 @@
                 </div>
             </div>
             <div class="col">
+                <div class="container d-flex justify-content-center gap-3">
+                    <img src= {{ asset('user.png') }} width="200x|" height="200x|" alt="">
+                </div>
+            </div>
+            <div class="col">
 
             </div>
         </div>
@@ -42,14 +47,11 @@
         </div>
         <div class="row">
             <div class="col">
-                <div class="container d-flex justify-content-center gap-3">
-                    <img src= {{ asset('user.png') }} width="200x|" height="200x|" alt="" style="transform:rotate(270deg);">
-                </div>
+
             </div>
             <div class="col">
 
             </div>
-
             <div class="col">
 
             </div>
