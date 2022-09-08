@@ -58,20 +58,6 @@ class GameController extends Controller
     public function show($id)
     {
         $games = Game::find($id);
-        // $query3 = Course::join(
-        //     'students', 'students.id_course', 'courses.id'
-        // )
-        // ->where('students.id', $id)
-        // ->select('courses.name as name')
-        // ->get();
-        // $query = Card::join(
-        //     'users', 'users.card_id', 'cards_has_users'
-        // )
-        // ->where('uers.card_id', $id)
-        // ->select('cards.id as id')
-        // ->get();
-
-        // return view('students.show', compact('apprentice', 'query', 'query2', 'query3') );
         return view('games.show', compact('games'));
     }
 

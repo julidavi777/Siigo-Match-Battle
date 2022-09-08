@@ -4,23 +4,30 @@
 
 @section('content')
 <div class="container bg-light text-dark rounded mt-5 pt-3">
+    {{-- @foreach ( $users as $player ) --}}
     <div class="row">
         <div class="col">
 
         </div>
         <div class="col">
             <div class="container d-flex justify-content-center gap-3">
-                <img src= {{ asset('user.png') }} width="200x|" height="200x|" alt="">
+                <img src= {{ asset('user.png') }} width="200x|" height="200x|" alt="" style="transform:rotate(345deg);">
+                <h4 class="text-center"> Jugador 2 </h4>
             </div>
         </div>
         <div class="col">
             <div class="container d-flex justify-content-center gap-3">
                 <img src= {{ asset('user.png') }} width="200x|" height="200x|" alt="">
+                {{-- <h4 class="text-center"> Jugador 3 </h4> --}}
+            </div>
+            <div class="container d-flex justify-content-center gap-3">
+                <h4 class="text-center"> Jugador 3 </h4>
             </div>
         </div>
         <div class="col">
             <div class="container d-flex justify-content-center gap-3">
-                <img src= {{ asset('user.png') }} width="200x|" height="200x|" alt="">
+                <h4 class="text-center"> Jugador 4 </h4>
+                <img src= {{ asset('user.png') }} width="200x|" height="200x|" alt="" style="transform:rotate(15deg);">
             </div>
         </div>
         <div class="col">
@@ -30,7 +37,8 @@
     <div class="row">
         <div class="col">
             <div class="container d-flex justify-content-center gap-3">
-                <img src= {{ asset('user.png') }} width="200x|" height="200x|" alt="" style="transform:rotate(270deg);">
+                <img src= {{ asset('user.png') }} width="200x|" height="200x|" alt="" style="transform:rotate(260deg);">
+                <h4 class="text-center"> Jugador 1 </h4>
             </div>
         </div>
         <div class="col">
@@ -41,7 +49,8 @@
         </div>
         <div class="col">
             <div class="container d-flex justify-content-center gap-3">
-                <img src= {{ asset('user.png') }} width="200x|" height="200x|" alt="" style="transform:rotate(90deg);">
+                <h4 class="text-center"> Jugador 5 </h4>
+                <img src= {{ asset('user.png') }} width="200x|" height="200x|" alt="" style="transform:rotate(100deg);">
             </div>
         </div>
     </div>
@@ -65,11 +74,19 @@
         </div>
         <div class="col">
             <div class="container d-flex justify-content-center gap-3">
+                <h4 class="text-center"> Jugador 7 </h4>
+            </div>
+            <div class="container d-flex justify-content-center gap-3">
+                {{-- <h4 class="text-center"> Jugador 6 </h4> --}}
                 <img src= {{ asset('user.png') }} width="200x|" height="200x|" alt="" style="transform:rotate(180deg);">
             </div>
         </div>
         <div class="col">
             <div class="container d-flex justify-content-center gap-3">
+                <h4 class="text-center"> Jugador 6 </h4>
+            </div>
+            <div class="container d-flex justify-content-center gap-3">
+                {{-- <h4 class="text-center"> Jugador 7 </h4> --}}
                 <img src= {{ asset('user.png') }} width="200x|" height="200x|" alt="" style="transform:rotate(180deg);">
             </div>
         </div>
@@ -77,6 +94,7 @@
 
         </div>
     </div>
+    {{-- @endforeach --}}
     <div class="container d-flex justify-content-center gap-3 mt-5 pb-5">
         <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Elegir carta</button>
 

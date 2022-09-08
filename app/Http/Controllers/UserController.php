@@ -63,6 +63,8 @@ class UserController extends Controller
         ->where('users.id', $id)
         ->select('games.id as id')
         ->get();
+
+
         return view('users.show', compact('users','query'));
     }
 

@@ -32,9 +32,6 @@
             </div>
             <br>
             <div class="mb-2 d-flex justify-content-center">
-            {{-- @foreach ( $query as $game )
-
-            @endforeach --}}
             <a href="/games" type="button" class="btn btn-success">Ir a iniciar parida</a>
             </div>
         </div>
