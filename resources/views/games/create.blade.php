@@ -31,11 +31,10 @@
                     </form>
 
                 </div>
-                <div class="mb-2 d-flex justify-content-center">
-                    <a href="/games/" type="button" class="btn btn-warning">Ir a iniciar partida</a>
+                <div class="game d-flex justify-content-center mt-5 gap-3">
+                    <a class="btn btn-danger" href="/users/create" role="button">Crear Nickname</a>
                 </div>
             </div>
-
         </div>
     </div>
 @endsection

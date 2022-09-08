@@ -29,7 +29,8 @@ class User extends Authenticatable
     }
 
     public function cards(){
-        return $this->belongsToMany(Card::class);
+        return $this->belongsToMany(Card::class)
+            ->withPivot('card_id','cards_has_users');
     }
 
 }
