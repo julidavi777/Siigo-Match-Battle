@@ -20,6 +20,7 @@ class Card extends Model
     ];
 
     public function users(){
-        return $this->belongsToMany(User::class);
+        return $this->belongsToMany(User::class)
+            ->withPivot('user_id','cards_has_users');
     }
 }

@@ -7,7 +7,7 @@ use App\Models\Game;
 use App\Models\User;
 use Illuminate\Http\Request;
 
-class GameController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,14 +16,9 @@ class GameController extends Controller
      */
     public function index()
     {
-        $games = Game::orderBy('id')->get();
-        $game = $games[count($games) -1];
-        // return response()->json($game);
-        // return Contact::orderBy('id', 'desc')->get()
-        return view('games.index', compact('games', 'game'));
+        $users = User::all();
+        return view('users.index', compact('users'));
     }
-
-    // echo hexadecimalAzar(5);
 
     /**
      * Show the form for creating a new resource.
@@ -32,7 +27,9 @@ class GameController extends Controller
      */
     public function create()
     {
-        return view('games.create');
+        $games = Game::all();
+        $cards = Card::all();
+        return view('users.create', compact('games', 'cards'));
     }
 
     /**
@@ -43,10 +40,12 @@ class GameController extends Controller
      */
     public function store(Request $request)
     {
-        $games = new Game();
-        $games->code = $request->input('code');
-        $games->save();
-        return view('games.create');
+        $users = new User();
+        $users->nick_name = $request->input('nick_name');
+        $users->type = $request->input('type');
+        $users->game_id = $request->input('game_id');
+        $users->save();
+        return view('users.create');
     }
 
     /**
@@ -57,22 +56,14 @@ class GameController extends Controller
      */
     public function show($id)
     {
-        $games = Game::find($id);
-        // $query3 = Course::join(
-        //     'students', 'students.id_course', 'courses.id'
-        // )
-        // ->where('students.id', $id)
-        // ->select('courses.name as name')
-        // ->get();
-        // $query = Card::join(
-        //     'users', 'users.card_id', 'cards_has_users'
-        // )
-        // ->where('uers.card_id', $id)
-        // ->select('cards.id as id')
-        // ->get();
-
-        // return view('students.show', compact('apprentice', 'query', 'query2', 'query3') );
-        return view('games.show', compact('games'));
+        $users = User::find($id);
+        $query = Game::join(
+            'users', 'users.game_id', 'games.id'
+        )
+        ->where('users.id', $id)
+        ->select('games.id as id')
+        ->get();
+        return view('users.show', compact('users','query'));
     }
 
     /**

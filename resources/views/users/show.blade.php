@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
-@section('title', 'Partidas')
+@section('title', 'Partida {{ game_id }}')
 
 @section('content')
-{{-- <div class="container bg-light text-dark rounded mt-5 pt-3">
+<div class="container bg-light text-dark rounded mt-5 pt-3">
     <div class="row">
         <div class="col">
 
